@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="Buttons.js" type="text/javascript"></script>
+    <script src="Tooltips.js" type="text/javascript"></script>
+    <script src="Main_positions.js" type="text/javascript"></script>
+    <script src="books.js" type="text/javascript"></script>
+    <script src="main_background.js" type="text/javascript"></script>
+    <script src="TalesMenu.js" type="text/javascript"></script>
+    <script src="resizer.js" type="text/javascript"></script>
+    <script src="New_Element.js" type="text/javascript"></script>
+    <script>
+        window.onload = function() {
+            buttons();          //buttons setter
+            booksFormatter();   //books creater
+            main_background();  //create and append div with background
+            contentSetting();   //create 'content' div and append main blocks
+            bottomMenu();       //get images and adjust visualization
+            booksSetter();      //get pictures and set trigger on them
+        };
+        window.onresize = function() {
+            windowResizer();
+        }
+    </script>
+    <link  type="text/css" rel="stylesheet" href='style_min.css' />
+</head>
+<body>
+
+<!--main page-->
+<div class="viewpoint">
+    <div class='buttonsName'>
+        Главная
+    </div>
+    <div class="buttonsTooltip">
+        Краткая информация о проекте и её разработчиках
+    </div>
+    <h1>
+        Интерактивная энциклопедия сказок
+    </h1>
+    <p>
+        Добро пожаловать на сайт, созданный специально для дошкольников и младших школьников, а также их родителей и учителей. Представленные сказки отлично подходят для изучения языка как родного, так и иностранного. Наш ресур предлагает множество возможностей: читать и слушать сказки, смотреть мультфильмы по ним. Помимо этого можно проверить понимание сказки и даже порисовать.
+        Тур по сайту поможет разобраться с функционалом. А вопросы, предложения, а также собственные иллюстрации и сказки присылайте нам.
+    </p>
+</div>
+<!--second div. Here are books-->
+<div class="viewpoint">
+    <div class="buttonsName">
+        Читать
+    </div>
+    <div class="buttonsTooltip">
+        Отечественные мультфильмы по сюжетам сказок. Для запуска плеера достаточно одного клика.Приятного просмотра!
+    </div>
+    <h1>Title</h1>
+    <p>some text in here</p>
+</div>
+<div class="viewpoint">
+    <div class="buttonsTooltip">
+        Тута книжки, типа
+    </div>
+    <div class="buttonsName">Книжки</div>
+    <div class="books">Это текст.   <br/>   И он большой. Очень большой</div>
+</div>
+<div class="viewpoint">
+    <div class="buttonsTooltip">
+        Сказки на выбор
+    </div>
+    <div class="buttonsName">Проверка</div>
+    <!--Menu with tales to chose-->
+    <div class="bottomMenu">
+        <a href="http://www.yahoo.com" target="_blank">Сказочный Алфавит</a>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/0.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/1.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/2.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/3.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/4.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/5.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/6.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/7.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/8.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/9.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/10.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/11.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/12.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/13.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/14.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/15.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/16.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/17.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/18.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/19.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/20.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/21.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/22.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/23.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/24.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/25.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/26.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/27.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/28.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/29.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/30.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/31.jpg"/>
+        <img class="pic" height="130px" width="104px" alt="" fullBook="index.html" abridgedBook="index.html" src="Tales_res/32.jpg"/>
+    </div>
+</div>
+</body>
+</html>
