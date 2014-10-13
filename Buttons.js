@@ -67,7 +67,7 @@ function buttons() {
     newTopButton.thisIndex = blocksLength;
 
     ///////////////////////////////////
-    //function of scrolling on click
+    // On click
     //////////////////////////////////
     newTopButton.onclick = function() {
 
@@ -77,6 +77,8 @@ function buttons() {
         //move all elements proportionally to the index of clicked button
         blocks[allBlocks].style.top = ((window.innerHeight * allBlocks) - (window.innerHeight * this.thisIndex)) + 'px';
       }
+      //hide tooltip. Vital for mobile devices
+      this.getElementsByClassName('tooltip')[0].style.display = 'none';
     };
 
     /////////////////////////////
@@ -104,7 +106,7 @@ function buttons() {
     };
 
     ///////////////////////////
-    // Hide tooltip
+    // On mouse out
     ///////////////////////////
     newTopButton.onmouseout = function () {
       this.getElementsByClassName('tooltip')[0].style.display = 'none';
