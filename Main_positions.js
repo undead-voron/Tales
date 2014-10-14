@@ -14,7 +14,8 @@ function mainBlocks() {
 
   // set all blocks to be 100% page height and set oder
   for (var blocksLength = 0; blocksLength < blocks.length; blocksLength++) {
-    blocks[blocksLength].style.height = window.innerHeight + 'px';
+    blocks[blocksLength].style.height = (window.innerHeight - document.getElementById('buttonsContainer').offsetHeight) - 5 + 'px';
+    blocks[blocksLength].style.paddingTop = ( document.getElementById('buttonsContainer').offsetHeight + 5 ) + 'px';
     blocks[blocksLength].style.top = (window.innerHeight * blocksLength) + 'px';
   }
 }
