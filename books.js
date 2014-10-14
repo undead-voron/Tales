@@ -44,6 +44,5 @@ function booksFormatter() {
 
     // add the last word
     boofer.innerHTML = (newText + bookText.substr(bookText.lastIndexOf(' ')+1, bookText.length-(bookText.lastIndexOf(' ')+1)));
-
   }
 }
