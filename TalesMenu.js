@@ -23,10 +23,8 @@ function bottomMenu(){
     //background settings
     talesBackGround.style.height = window.innerHeight + 'px';
     talesBackGround.style.width = window.innerWidth + 'px';
-    talesBackGround.style.position = 'absolute';
     talesBackGround.className = 'talesMenuBackground';
     talesBackGround.style.left = ((window.innerWidth - imgParent.offsetWidth)/2) * (-1) + 'px';
-    talesBackGround.style.top = 0;
 
     //append background
     imgParent.appendChild(talesBackGround);
@@ -172,5 +170,4 @@ function setLinks (fullBook, abridgedBook) {
   linkContainer.style.top = ((window.innerHeight / 2) - (linkContainer.offsetHeight / 2)) + 'px';
   linkContainer.style.backgroundColor = '#333333';
   linkContainer.style.left = ((window.innerWidth/2) - (linkContainer.offsetWidth / 2) ) + 'px';
-  //linkContainer.onclick = function(){alert('lol')};
 }
