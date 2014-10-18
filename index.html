@@ -12,6 +12,7 @@
     <script src="resizer.js" type="text/javascript"></script>
     <script src="New_Element.js" type="text/javascript"></script>
     <script src="Pic_tales_position.js" type="text/javascript"></script>
+    <script src="botMenuStyle.js" type="text/javascript"></script>
     <script>
         window.onload = function() {
             buttons();          //buttons setter
@@ -20,6 +21,8 @@
             contentSetting();   //create 'content' div and append main blocks
             bottomMenu();       //get images and adjust visualization
             booksSetter();      //get pictures and set trigger on them
+            botMenuVisualization(); //advanced settings for visualization bottom menue
+            
         };
         window.onresize = function() {
             windowResizer();    
