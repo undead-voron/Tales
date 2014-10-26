@@ -11,8 +11,8 @@ function booksFormatter() {
 
     body.appendChild(book());
 
+    // get the book to fill with text
     var currentBook = body.lastChild;
-
 
     //get text of a book
     var bookText = text[textNumber].innerHTML;
@@ -23,19 +23,17 @@ function booksFormatter() {
     //this is a new text for a book
     var newText = '';
 
-    //create element for managing page content
-    var phantomPage = document.createElement('div');
-    phantomPage.className = 'page';
-    phantomPage.innerHTML = 'lololol';
+    //set the first page for the book. This page is temporal.
+    currentBook.appendChild(page());
 
-    boofer.appendChild(phantomPage);
+    var phantomPage = currentBook.getElementsByClassName('page')[0];
 
-    //create first page in book
-    var firstPage  = document.createElement('div');
-    firstPage.className = 'page';
-    boofer.appendChild(firstPage);
+    //create first page in book. This page is permanent.
+    currentBook.appendChild(page());
 
-    //get all words before lasst ' ' in text;
+
+
+    //get all words before last ' ' in text;
     while (newText.length<bookText.lastIndexOf(' ')){
 
       //get untouched part of text for book
@@ -51,25 +49,25 @@ function booksFormatter() {
 
       textSetter(newWord);
       //alert the result of a book word by word
-//      alert(newText);
+      alert(newText);
     }
 
     function textSetter (word) {
-      var lastPage = boofer.lastChild;
+      var lastPage = currentBook.lastChild;
 
       phantomPage.innerHTML = lastPage.innerHTML + word + ' ';
-      if (phantomPage.offsetHeight > 700){
+      if (phantomPage.offsetHeight > 550){
         lastPage.innerHTML+= word + ' ';
       }
       else{
         var newPage = document.createElement('div');
-        boofer.appendChild(newPage);
+        currentBook.appendChild(page());
       }
       alert('lol');
     }
 
     // add the last word
-    boofer.innerHTML = (newText + bookText.substr(bookText.lastIndexOf(' ')+1, bookText.length-(bookText.lastIndexOf(' ')+1)));
+    currentBook.innerHTML = (newText + bookText.substr(bookText.lastIndexOf(' ')+1, bookText.length-(bookText.lastIndexOf(' ')+1)));
   }
 
 }
@@ -89,7 +87,7 @@ function book(){
   newBook.style.zIndex = 20;
   newBook.style.border = 'dashed green 2px';
   newBook.style.transition = '1s';
-  newBook.innerHTML = 'fuck off';
+  newBook.className = 'newBook';
   return newBook;
 }
 
