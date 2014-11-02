@@ -31,10 +31,11 @@ function booksFormatter() {
     //create first page in book. This page is permanent.
     currentBook.appendChild(page());
 
-
-
     //get all words before last ' ' in text;
     while (newText.length<bookText.lastIndexOf(' ')){
+
+      // get div of current page
+      var currentPage = currentBook.lastChild;
 
       //get untouched part of text for book
       var booferText = bookText.substr(newText.length, bookText.length - newText.length);
@@ -47,43 +48,37 @@ function booksFormatter() {
       //set everything before nearest ' ' and add ' ' after it.
       newText += newWord + ' ';
 
-      textSetter(newWord);
+      textSetter(newWord, currentPage, phantomPage, currentBook);
       //alert the result of a book word by word
-      alert(newText);
+//      alert(newText);
     }
 
-    function textSetter (word) {
-      var lastPage = currentBook.lastChild;
+    pagePosition(currentBook);
+    currentBook.removeChild(phantomPage);
 
-      phantomPage.innerHTML = lastPage.innerHTML + word + ' ';
-      if (phantomPage.offsetHeight > 550){
-        lastPage.innerHTML+= word + ' ';
-      }
-      else{
-        var newPage = document.createElement('div');
-        currentBook.appendChild(page());
-      }
-      alert('lol');
-    }
-
-    // add the last word
-    currentBook.innerHTML = (newText + bookText.substr(bookText.lastIndexOf(' ')+1, bookText.length-(bookText.lastIndexOf(' ')+1)));
+   // add the last word
+   //
+   //
+   //
+   //
+   // currentBook.innerHTML = (newText + bookText.substr(bookText.lastIndexOf(' ')+1, bookText.length-(bookText.lastIndexOf(' ')+1)));
   }
 
 }
 
 
-//////////////////////////////////////////
+////////////////////////////////////////////
 //
 //  New Book
 //
-//////////////////////////////////////////
+////////////////////////////////////////////
 function book(){
   var newBook = document.createElement('div');
   newBook.style.position = 'fixed';
   newBook.style.top = '60px';
-  newBook.style.right = '20px';
-  newBook.style.width = '80px';
+  newBook.style.left = '20px';
+  newBook.style.width = '800px';
+  newBook.style.height = '300px';
   newBook.style.zIndex = 20;
   newBook.style.border = 'dashed green 2px';
   newBook.style.transition = '1s';
@@ -91,13 +86,56 @@ function book(){
   return newBook;
 }
 
-////////////////////////////////////////////
+/////////////////////////////
 //
 //  New Page
 //
-////////////////////////////////////////////
+/////////////////////////////
 function page() {
   var newPage = document.createElement('div');
   newPage.className = 'page';
   return newPage
+}
+
+
+/////////////////////////////////
+//
+// Set new word into book's page
+//
+/////////////////////////////////
+
+function textSetter (word, currentPage, phantomPage, currentBook) {
+
+  phantomPage.innerHTML = currentPage.innerHTML + word + ' ';
+  if (phantomPage.offsetHeight < 298){
+    currentPage.innerHTML+= word + ' ';
+  }
+  else{
+    currentBook.appendChild(page());
+    var newPage = currentBook.lastChild;
+
+    newPage.innerHTML = word + ' ';
+    phantomPage.innerHTML = word + ' ';
+  }
+}
+
+//////////////////////////////////////
+//
+// Set position for pages in book
+//
+//////////////////////////////////////
+
+function pagePosition(book) {
+
+  //get current book
+  var children = book.childNodes;
+
+  var positioner = 1;
+
+  for (var pages = 0; pages<children.length; pages++){
+    if (positioner>1)
+      positioner = 0;
+    children[pages].style.left = (positioner * children[pages].offsetWidth)  + 'px';
+    positioner++;
+  }
 }
